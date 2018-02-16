@@ -33,6 +33,8 @@ def display_question(id)
     end
   end
 end
+
+
 def validate_answer(id, user_input)
   connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
     puts "ID | Title"
@@ -42,10 +44,9 @@ def validate_answer(id, user_input)
       if user_input == actual_answer
         puts "Answer is correct!"
         return true
-      end
-
     else
       return false
+    end
     end
   end
 end

@@ -22,7 +22,7 @@ class Game
       display_question(id)
       user_input = gets.chomp.to_sym
 
-      validate = validate_answer(user_input)
+      validate = validate_answer(id, user_input)
 
       if validate == true
         id += 1
@@ -35,6 +35,8 @@ class Game
         # end
         # end
       end
+
+
     else
         puts "You win! Yay!"
         # return
@@ -43,5 +45,5 @@ class Game
 
     # this code needs to go to db.rb file
 
-  
+
 end
