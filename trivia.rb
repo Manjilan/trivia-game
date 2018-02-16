@@ -1,3 +1,5 @@
+require './db'
+
 class Game
   attr_accessor :db_id
 
@@ -22,55 +24,24 @@ class Game
 
       validate = validate_answer(user_input)
 
-      if validate = true
-        id++
+      if validate == true
+        id += 1
         ask_question(id)
-      end
+        # end
 
       else
         puts "You are wrong."
         return
+        # end
+        # end
       end
-    end
-
     else
-      puts "You win! Yay!"
-      return
+        puts "You win! Yay!"
+        # return
     end
   end
 
-  # this code needs to go to db.rb file
+    # this code needs to go to db.rb file
 
-  def display_question(id)
-
-    puts "we are in the display question function"
-  #   connection.exec( "SELECT question FROM questions WHERE id = #{id}" ) do |result|
-  #     puts "ID | Title"
-  #     result.each do |row|
-  #       puts " %s | %s" % row.values_at('id', 'question')
-  # end
-  # end
-
-
-  end
-def validate_answer(id, user_input)
-  connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
-      puts "ID | Title"
-      result.each do |row|
-        actual_answer = " %s " % row.values_at('answer')
-
-        if user_input == actual_answer
-            puts "Answer is correct!"
-            return true
-        end
-
-      else
-        return false
-      end
-  end
-  end
-
-end
-
-
+  
 end

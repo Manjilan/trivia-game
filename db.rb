@@ -18,7 +18,34 @@ def add_table(questions)
 end
 
 def add_questions(question, answer)
-   connection.exec("INSERT INTO questions (question, answer) VALUES ('#{question}','#{answer}')")
- #include the list of values you want to add as arguments or add id manually
-   p "User created: #{question}, #{answer} "
+  connection.exec("INSERT INTO questions (question, answer) VALUES ('#{question}','#{answer}')")
+  #include the list of values you want to add as arguments or add id manually
+  p "User created: #{question}, #{answer} "
+end
+
+def display_question(id)
+
+  puts "we are in the display question function"
+  connection.exec( "SELECT question FROM questions WHERE id = #{id}" ) do |result|
+    puts "ID | Title"
+    result.each do |row|
+      puts " %s | %s" % row.values_at('id', 'question')
+    end
+  end
+end
+def validate_answer(id, user_input)
+  connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
+    puts "ID | Title"
+    result.each do |row|
+      actual_answer = " %s " % row.values_at('answer')
+
+      if user_input == actual_answer
+        puts "Answer is correct!"
+        return true
+      end
+
+    else
+      return false
+    end
+  end
 end
