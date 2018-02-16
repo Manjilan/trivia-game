@@ -1,3 +1,7 @@
+
+Team Members: Manjila, Emma, Srishti, Kingsley, Felix
+Game: Trivia game with 5 questions
+
 # Text Adventure
 
 **Requirements**
