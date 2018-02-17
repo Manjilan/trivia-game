@@ -2,7 +2,9 @@
 Team Members: Manjila, Emma, Srishti, Kingsley, Felix
 Game: Trivia game with 5 questions
 
-# Text Adventure
+Step 1: Welcomes the player and asks for his/her user_name
+Step 2: starts with the first questions
+Step 3: will go to next question if the answer is correct otherwise will end the game
 
 **Requirements**
 
