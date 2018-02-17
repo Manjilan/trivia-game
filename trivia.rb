@@ -27,7 +27,7 @@
 
         puts validate
 
-        if validate == true
+        if validate != true
           id += 1
           ask_question(id)
           puts "You are right."
