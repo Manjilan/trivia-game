@@ -1,20 +1,27 @@
 require './db'
 
   class Game
-    attr_accessor :db_id
+    attr_accessor :db_id, :random
 
     def initialize
       @db_id = 1
       start_game
     end
 
+    # def random
+    #   r= Random.new
+    #   puts r.rand(10)
+    # end
 
     def start_game
-      puts "Welcome and Get to ready to play"
-      puts "Answer with true or false."
+      puts " -----------------------------X----------------------------"
+      puts "|              Welcome and Get to ready to play            |"
+      puts "|                 Answer with true or false.               |"
+      puts " -----------------------------X----------------------------"
       print "Enter your name: "
       user_name = gets.chomp.to_s
       puts ""
+
       ask_question(@db_id, user_name)
     end
 
