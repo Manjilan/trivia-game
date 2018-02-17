@@ -13,14 +13,14 @@ end
 
 def add_table(questions)
   connection.exec("CREATE TABLE #{questions} (id SERIAL PRIMARY KEY, question VARCHAR(255), answer VARCHAR(255))")
-  p "Table created: #{questions}"
+  # p "Table created: #{questions}"
 
 end
 
 def add_questions(question, answer)
   connection.exec("INSERT INTO questions (question, answer) VALUES ('#{question}','#{answer}')")
   #include the list of values you want to add as arguments or add id manually
-  p "User created: #{question}, #{answer} "
+  # p "User created: #{question}, #{answer} "
 end
 
 def display_question(id)
@@ -57,14 +57,16 @@ def validate_answer?(id, user_input)
         puts ""
         return true
       else
-        puts "Answer is wrong! Try again!!!"
+        puts "Answer is wrong!"
         return false
       end
     end
   end
 
-
-
-
-
 end
+# add_table("questions")
+# add_questions("The World population is more than 100 billion.", false)
+# add_questions("China is in Europe", false)
+# add_questions("George Washington is the first president", true)
+# add_questions("Mars has been invaded by humans", false)
+# add_questions("Leap year occurs every two years", false)

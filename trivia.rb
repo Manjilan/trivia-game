@@ -39,7 +39,7 @@ require './db'
           # end
 
         else
-          puts "You are wrong."
+          puts " Try again!!!"
           return
 
         end
