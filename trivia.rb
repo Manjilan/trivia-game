@@ -1,4 +1,4 @@
-  require './db'
+require './db'
 
   class Game
     attr_accessor :db_id, :score
