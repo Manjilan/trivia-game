@@ -34,21 +34,29 @@ def display_question(id)
 end
 
 
-def validate_answer(id, user_input)
+def validate_answer?(id, user_input)
 
   connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
 
     result.each do |row|
-      actual_answer = " %s " % row.values_at('answer')
+      actual_answer = "%s"% row.values_at('answer')
 
-      # puts actual_answer
-      # print actual_answer.class
+      puts "here is the actual answer in the db"
+       puts actual_answer
+     #  print actual_answer.class
+     #
+       puts "here is the user input"
+      puts user_input
+     # print user_input.class
 
-      if user_input != actual_answer
-        puts "Answer is wrong!"
-        return false
-      else
+     puts "now I am comparing the user input to the actual answer"
+    puts user_input == actual_answer
+
+      if user_input == actual_answer
+        puts "Answer is wright!"
         return true
+      else
+        return false
       end
     end
   end

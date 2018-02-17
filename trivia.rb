@@ -23,11 +23,11 @@ require './db'
         user_input = gets.chomp.to_s
 
 
-        validate = validate_answer(id, user_input)
+        validate = validate_answer?(id, user_input)
 
         puts validate
 
-        if validate != true
+        if validate == true
           id += 1
           ask_question(id)
           puts "You are right."
@@ -35,6 +35,7 @@ require './db'
 
         else
           puts "You are wrong."
+          return
 
         end
       else
