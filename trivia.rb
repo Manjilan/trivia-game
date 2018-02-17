@@ -11,16 +11,20 @@ require './db'
 
     def start_game
       puts "Welcome and Get to ready to play"
-      puts "Answer with true or false"
-      ask_question(@db_id)
+      puts "Answer with true or false."
+      print "Enter your name: "
+      user_name = gets.chomp.to_s
+      puts ""
+      ask_question(@db_id, user_name)
     end
 
-    def ask_question(id)
+    def ask_question(id, user_name)
       # puts id
       if id <= 5
         # puts "id is less than 5"
         # since id is less than 5 we are going to display the next question
         display_question(id)
+        print "#{user_name}'s Answer: "
         user_input = gets.chomp.to_s
 
 
@@ -30,7 +34,7 @@ require './db'
 
         if validate == true
           id += 1
-          ask_question(id)
+          ask_question(id, user_name)
           # puts "You are right."
           # end
 

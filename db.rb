@@ -29,7 +29,6 @@ def display_question(id)
     result.each do |row|
 
       puts "Question: %s" % row.values_at('question')
-      print "Answer: "
     end
   end
 end
