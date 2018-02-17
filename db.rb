@@ -42,22 +42,6 @@ end
 
 
 def validate_answer(id, user_input)
-  # connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
-  #   puts "question"
-  #   result.each do |row|
-  #     actual_answer = " %s " % row.values_at('answer')
-  #
-  #     puts actual_answer
-  #
-  #     if user_input == actual_answer
-  #       puts "Answer is correct!"
-  #       return true
-  #     else
-  #       return false
-  #     end
-  #   end
-  # end
-
 
   connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
 
