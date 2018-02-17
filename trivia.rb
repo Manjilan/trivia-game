@@ -8,10 +8,6 @@ require './db'
       start_game
     end
 
-    # def random
-    #   r= Random.new
-    #   puts r.rand(10)
-    # end
 
     def start_game
       puts " -----------------------------X----------------------------"
