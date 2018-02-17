@@ -28,7 +28,8 @@ def display_question(id)
   connection.exec( "SELECT question FROM questions WHERE id = #{id}" ) do |result|
     result.each do |row|
 
-      puts " question: %s" % row.values_at('question')
+      puts "Question: %s" % row.values_at('question')
+      print "Answer: "
     end
   end
 end
@@ -41,21 +42,23 @@ def validate_answer?(id, user_input)
     result.each do |row|
       actual_answer = "%s"% row.values_at('answer')
 
-      puts "here is the actual answer in the db"
-       puts actual_answer
-     #  print actual_answer.class
-     #
-       puts "here is the user input"
-      puts user_input
-     # print user_input.class
-
-     puts "now I am comparing the user input to the actual answer"
-    puts user_input == actual_answer
+    #   puts "here is the actual answer in the db"
+    #    puts actual_answer
+    #  #  print actual_answer.class
+    #  #
+    #    puts "here is the user input"
+    #   puts user_input
+    #  # print user_input.class
+    #
+    #  puts "now I am comparing the user input to the actual answer"
+    # puts user_input == actual_answer
 
       if user_input == actual_answer
-        puts "Answer is wright!"
+        puts "Answer is right!"
+        puts ""
         return true
       else
+        puts "Answer is wrong! Try again!!!"
         return false
       end
     end

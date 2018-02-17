@@ -1,7 +1,7 @@
 require './db'
 
   class Game
-    attr_accessor :db_id, :score
+    attr_accessor :db_id
 
     def initialize
       @db_id = 1
@@ -11,6 +11,7 @@ require './db'
 
     def start_game
       puts "Welcome and Get to ready to play"
+      puts "Answer with true or false"
       ask_question(@db_id)
     end
 
@@ -25,12 +26,12 @@ require './db'
 
         validate = validate_answer?(id, user_input)
 
-        puts validate
+        # puts validate
 
         if validate == true
           id += 1
           ask_question(id)
-          puts "You are right."
+          # puts "You are right."
           # end
 
         else
@@ -45,6 +46,6 @@ require './db'
     end
 
       # this code needs to go to db.rb file
-
-
   end
+
+  trivia = Game.new
