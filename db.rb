@@ -25,28 +25,59 @@ end
 
 def display_question(id)
 
-  puts "we are in the display question function"
+  # puts "we are in the display question function"
+  # connection.exec( "SELECT * FROM questions WHERE id = #{id}" ) do |result|
+  #   puts "ID | Title"
+  #   result.each do |row|
+  #     puts " %s | %s" % row.values_at('id', 'question')
+  #   end
+  # end
+
   connection.exec( "SELECT question FROM questions WHERE id = #{id}" ) do |result|
-    puts "ID | Title"
-    result.each do |row|
-      puts " %s | %s" % row.values_at('id', 'question')
-    end
+  result.each do |row|
+    puts " question: %s" % row.values_at('question')
   end
+end
 end
 
 
 def validate_answer(id, user_input)
+  # connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
+  #   puts "question"
+  #   result.each do |row|
+  #     actual_answer = " %s " % row.values_at('answer')
+  #
+  #     puts actual_answer
+  #
+  #     if user_input == actual_answer
+  #       puts "Answer is correct!"
+  #       return true
+  #     else
+  #       return false
+  #     end
+  #   end
+  # end
+
+
   connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
-    puts "ID | Title"
+
     result.each do |row|
       actual_answer = " %s " % row.values_at('answer')
 
-      if user_input == actual_answer
-        puts "Answer is correct!"
+      # puts actual_answer
+      # print actual_answer.class
+
+      if user_input != actual_answer
+        puts "Answer is wrong!"
         return true
-    else
-      return false
-    end
+      else
+        return false
+      end
     end
   end
+
+
+
+
+
 end
