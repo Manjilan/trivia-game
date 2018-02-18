@@ -1,12 +1,14 @@
 require './db'
 
   class Game
-    attr_accessor :db_id, :random
+    attr_accessor :db_id, :random, :score
 
     def initialize
       @db_id = 1
-      start_game
+      @score = 0
       add_table("questions")
+      start_game
+
     end
 
 
@@ -19,10 +21,10 @@ require './db'
       user_name = gets.chomp.to_s
       puts ""
 
-      ask_question(@db_id, user_name)
+      ask_question(@db_id, user_name, @score)
     end
 
-    def ask_question(id, user_name)
+    def ask_question(id, user_name, score)
       # puts id
       if id <= 5
         # puts "id is less than 5"
@@ -38,18 +40,28 @@ require './db'
 
         if validate == true
           id += 1
-          ask_question(id, user_name)
+          score += 1
+          ask_question(id, user_name, score)
           # puts "You are right."
           # end
 
         else
           puts " Try again!!!"
-          ask_question(id, user_name)
+          id += 1
+          ask_question(id, user_name, score)
           # return
 
         end
       else
+
+          if score == 5
           puts "You win! Yay!"
+          puts "Your score is #{score} out of 5"
+        else
+          puts "You lose! Awww!"
+          puts "Your score is #{score} out of 5"
+        end
+
           # return
       end
     end
