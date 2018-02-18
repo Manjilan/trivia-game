@@ -13,6 +13,26 @@ Database for Questions created
 Uses strings and booleans
 
 
+
+**Assumptions**
+
+1. Player is comfortable working with in the terminal or ruby interpreter (IRB)
+
+2. Player has ruby installed in their computer
+  - https://www.ruby-lang.org/en/documentation/installation/#rbenv
+
+3. Player has PostgreSQL installed on their computer
+In terminal run :
+gem install pg
+
+# You may need to use sudo
+
+4. Player has PostgreSQL database named 'trivia' on their computer
+In terminal run :
+
+createdb library
+
+
 **Requirements**
 
 You're going to create a text adventure! Your options are:

@@ -12,7 +12,7 @@ def connection
 end
 
 def add_table(questions)
-  connection.exec("CREATE TABLE #{questions} (id SERIAL PRIMARY KEY, question VARCHAR(255), answer VARCHAR(255))")
+  connection.exec("CREATE TABLE IF NOT EXISTS #{questions} (id SERIAL PRIMARY KEY, question VARCHAR(255), answer VARCHAR(255))")
   # p "Table created: #{questions}"
 
 end
@@ -64,7 +64,9 @@ def validate_answer?(id, user_input)
   end
 
 end
-# add_table("questions")
+
+
+
 # add_questions("The World population is more than 100 billion.", false)
 # add_questions("China is in Europe", false)
 # add_questions("George Washington is the first president", true)

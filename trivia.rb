@@ -6,6 +6,7 @@ require './db'
     def initialize
       @db_id = 1
       start_game
+      add_table("questions")
     end
 
 
@@ -43,7 +44,8 @@ require './db'
 
         else
           puts " Try again!!!"
-          return
+          ask_question(id, user_name)
+          # return
 
         end
       else
