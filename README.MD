@@ -2,19 +2,7 @@
 Team Members: Manjila, Emma, Srishti, Kingsley, Felix
 Game: Trivia game with 5 questions
 
-Step 1: Welcomes the player and asks for his/her user_name
-
-Step 2: starts with the first questions
-
-Step 3: will go to next question if the answer is correct otherwise will end the game
-
-Database for Questions created
-
-Uses strings and booleans
-
-
-
-**Assumptions**
+**Requirements**
 
 1. Player is comfortable working with in the terminal or ruby interpreter (IRB)
 
@@ -32,22 +20,26 @@ In terminal run :
 
 createdb library
 
+5. Run the 'questions.rb' file once to populate the questions table ( irb -r questions.rb )
 
-**Requirements**
+**How the game works**
 
-You're going to create a text adventure! Your options are:
+Step 1: Welcomes the player and asks for his/her user_name
 
-1. Text based adventure
-2. Trivia game
-3. Battle Simulator
+Step 2: starts with the first questions
 
-Your game must be playable in the terminal or ruby interpreter (IRB). Either is fine.
+Step 3: will go to next question if the answer is correct or wrong,
 
-Your game must:
+Step 4: score is updated
 
-- Create a database
-- Create at least 1 table in your database.
-- Use at least 2 datatypes (strings, numbers or booleans)
-- Create at least 1 model
+Step 5: game will end once all questions have been answered
 
-Resource: https://jsrn.gitbooks.io/make-your-first-text-adventure-in-ruby/content/index.html
+step 6: final score will be displayed
+
+
+**Technologies used**
+Database for Questions created
+
+2 tables created (questions and user)
+
+Uses strings and booleans
