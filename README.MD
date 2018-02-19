@@ -1,7 +1,9 @@
 
-Team Members: Manjila, Emma, Srishti, Kingsley, Felix
+***Team Members: Manjila, Emma, Srishti, Kingsley, Felix***
 
 Game: Trivia game with 5 questions
+
+```
 
 " --------------------------------------X-------------------------------------- "
 "|                        Welcome and Get to ready to play                     |"
