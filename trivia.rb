@@ -59,9 +59,21 @@ require './db'
         end
       else
 
-          if score == 5
+          if score == "5"
           puts "You win! Yay!"
           puts "Your score is #{score} out of 5"
+          puts "
+                  ███         ███     ▄██████▄     ███    ███
+                    ███     ███      ███    ███    ███    ███
+                       █████         ███    ███    ███    ███
+                        ███          ███    ███    ███    ███
+                        ███           ▀██████▀      ▀██████▀
+
+                 ███             ███      ███     ███▄▄▄▄
+                 ███             ███      ███     ███▀▀▀██▄
+                  ███    ███    ███       ███     ███   ███
+                   ███   ███   ███        ███     ███   ███
+                     ███     ███          ███     ███   ███ "
         else
           puts "You lose! Awww!"
           puts "Your score is #{score} out of 5"
