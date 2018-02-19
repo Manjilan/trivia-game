@@ -32,7 +32,7 @@ require './db'
         # since id is less than 5 we are going to display the next question
         display_question(id)
         print "#{user_name}'s Answer: "
-        user_input = gets.chomp.to_s
+        user_input = gets.chomp.to_s.downcase
         puts ""
         # user_input.strip!
 

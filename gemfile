@@ -1,0 +1,4 @@
+"https://rubygems.org"
+
+gem 'rmagick'
+gem 'catpix'
