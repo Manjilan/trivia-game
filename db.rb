@@ -62,19 +62,11 @@ def validate_answer?(id, user_input)
     # puts user_input == actual_answer
 
       if user_input == actual_answer
-<<<<<<< HEAD
-        puts "Answer is right!=======================>"
-        puts ""
-        return true
-      else
-        puts "Answer is wrong!=======================>"
-=======
         # puts "Answer is right!"
         # puts ""
         return true
       else
         # puts "Answer is wrong!"
->>>>>>> 7f0fa80769776900c23767107b37115024345b1d
         return false
       end
     end

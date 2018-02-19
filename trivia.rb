@@ -33,6 +33,7 @@ require './db'
         display_question(id)
         print "#{user_name}'s Answer: "
         user_input = gets.chomp.to_s
+        puts ""
         # user_input.strip!
 
 
@@ -50,15 +51,10 @@ require './db'
           # end
 
         else
-<<<<<<< HEAD
-          puts " -------------- Try again!!! ------------- "
-          return
-=======
           # puts " Try again!!!"
           id += 1
           ask_question(id, user_name, score)
           # return
->>>>>>> 7f0fa80769776900c23767107b37115024345b1d
 
         end
       else
