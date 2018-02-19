@@ -1,5 +1,5 @@
 require './db'
-
+require 'catpix'
   class Game
     attr_accessor :db_id, :random, :score
 
@@ -87,3 +87,4 @@ require './db'
   end
 
   trivia = Game.new
+  Catpix::print_image "gameover.png"
