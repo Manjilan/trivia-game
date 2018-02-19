@@ -11,6 +11,7 @@ Game: Trivia game with 5 questions
 
 3. Player has PostgreSQL installed on their computer
 In terminal run :
+
 gem install pg
 
 # You may need to use sudo

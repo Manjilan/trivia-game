@@ -4,6 +4,8 @@
 # Use this module to:
 # - Connect to the adventure database
 # - CRUD operations (CREATE, SELECT, UPDATE, DELETE)
+
+
 #
 require 'pg'
 
@@ -16,6 +18,14 @@ def add_table(questions)
   # p "Table created: #{questions}"
 
 end
+
+def add_user_table(user)
+
+    connection.exec("CREATE TABLE IF NOT EXISTS user_table2 (user_name VARCHAR(255), score VARCHAR(255) )")
+
+    connection.exec("INSERT INTO user_table2 (user_name, score) VALUES ('#{user}','0')")
+
+  end
 
 def add_questions(question, answer)
   connection.exec("INSERT INTO questions (question, answer) VALUES ('#{question}','#{answer}')")
@@ -37,7 +47,6 @@ end
 def validate_answer?(id, user_input)
 
   connection.exec( "SELECT answer FROM questions WHERE id = #{id}" ) do |result|
-
     result.each do |row|
       actual_answer = "%s"% row.values_at('answer')
 
@@ -53,15 +62,39 @@ def validate_answer?(id, user_input)
     # puts user_input == actual_answer
 
       if user_input == actual_answer
-        puts "Answer is right!"
-        puts ""
+        # puts "Answer is right!"
+        # puts ""
         return true
       else
-        puts "Answer is wrong!"
+        # puts "Answer is wrong!"
         return false
       end
     end
   end
+
+end
+
+def update_score(score, user_name)
+
+connection.exec("UPDATE user_table2 SET score = #{score} + 1 WHERE user_name = '#{user_name}';")
+display_score(user_name)
+#
+end
+
+
+def display_score(user_name)
+
+   connection.exec( "SELECT * FROM user_table2 WHERE user_name = '#{user_name}' ") do |result|
+ result.each do |row|
+    score_in_db = "%s"% row.values_at('score')
+    # puts "this is the current score in the db"
+    # puts score_in_db
+    # puts "%s|%d"% row.values_at('user_name', 'score')
+    return score_in_db
+
+    end
+  end
+
 
 end
 

@@ -6,7 +6,6 @@ require './db'
     def initialize
       @db_id = 1
       @score = 0
-      add_table("questions")
       start_game
 
     end
@@ -21,6 +20,8 @@ require './db'
       user_name = gets.chomp.to_s
       puts ""
 
+      add_user_table(user_name)
+
       ask_question(@db_id, user_name, @score)
     end
 
@@ -32,6 +33,8 @@ require './db'
         display_question(id)
         print "#{user_name}'s Answer: "
         user_input = gets.chomp.to_s
+        # user_input.strip!
+
 
 
         validate = validate_answer?(id, user_input)
@@ -40,13 +43,14 @@ require './db'
 
         if validate == true
           id += 1
-          score += 1
+          # score += 1
+          score = update_score(score, user_name)  # updates the score in the db table
           ask_question(id, user_name, score)
           # puts "You are right."
           # end
 
         else
-          puts " Try again!!!"
+          # puts " Try again!!!"
           id += 1
           ask_question(id, user_name, score)
           # return
