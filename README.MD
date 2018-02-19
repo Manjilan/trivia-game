@@ -2,7 +2,20 @@
 Team Members: Manjila, Emma, Srishti, Kingsley, Felix
 Game: Trivia game with 5 questions
 
-**Requirements**
+**" --------------------------------------X--------------------------------------
+"|                        Welcome and Get to ready to play                     |"
+"|                           Answer with true or false.                        |"
+**" --------------------------------------X--------------------------------------"
+_______      ___          __  ___   ______        ___      .__   __.      _______.
+/  _____|    /   \        |  |/  /  /  __  \      /   \     |  \ |  |     /       |
+|  |  __     /  ^  \       |  '  /  |  |  |  |    /  ^  \    |   \|  |    |   (----`
+|  | |_ |   /  /_\  \      |    <   |  |  |  |   /  /_\  \   |  . `  |     \   \    
+|  |__| |  /  _____  \     |  .  \  |  `--'  |  /  _____  \  |  |\   | .----)   |   
+\______| /__/     \__\    |__|\__\  \______/  /__/     \__\ |__| \__| |_______/    
+
+**" --------------------------------------X--------------------------------------"**
+
+# Requirements
 
 1. Player is comfortable working with in the terminal or ruby interpreter (IRB)
 
@@ -13,17 +26,19 @@ Game: Trivia game with 5 questions
 In terminal run :
 
 gem install pg
-
-# You may need to use sudo
+**You may need to use sudo**
 
 4. Player has PostgreSQL database named 'trivia' on their computer
 In terminal run :
 
-createdb library
+createdb trivia
+
 
 5. Run the 'questions.rb' file once to populate the questions table ( irb -r questions.rb )
 
-**How the game works**
+6. Now you are ready to play!
+
+# How the game works
 
 Step 1: Welcomes the player and asks for his/her user_name
 
@@ -38,7 +53,7 @@ Step 5: game will end once all questions have been answered
 step 6: final score will be displayed
 
 
-**Technologies used**
+# Technologies used
 Database for Questions created
 
 2 tables created (questions and user)
