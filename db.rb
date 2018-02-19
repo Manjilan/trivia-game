@@ -53,11 +53,11 @@ def validate_answer?(id, user_input)
     # puts user_input == actual_answer
 
       if user_input == actual_answer
-        puts "Answer is right!"
+        puts "Answer is right!=======================>"
         puts ""
         return true
       else
-        puts "Answer is wrong!"
+        puts "Answer is wrong!=======================>"
         return false
       end
     end
